@@ -1,0 +1,4 @@
+openocd
+*.o
+*.elf
+*.a
