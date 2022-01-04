@@ -1,0 +1,10 @@
+[build]
+target = "armv7a-none-eabi"
+
+
+[target.armv7a-none-eabi]
+runner = 'arm-none-eabi-gdb'
+rustflags = [
+    "-C", "link-arg=-Tmemmap.ld",
+]
+

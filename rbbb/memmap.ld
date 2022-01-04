@@ -3,11 +3,14 @@ MEMORY
     sram : ORIGIN = 0x402F0400, LENGTH = 64K
 }
 
-STACK_SIZE = 0x200;
+STACK_SIZE = 0x1000;
 ENTRY(start)
 SECTIONS
 {
-    .text : { *(.text*) } > sram
+    .text : { 
+	    KEEP(*(.start))
+	    *(.text*) 
+    } > sram
     .bss : { *(.bss*) } > sram
     .data : { *(.data*) } > sram
     .stack : {
